@@ -1,0 +1,24 @@
+{
+  "name": "blog-own",
+  "version": "1.0.0",
+  "description": "blog nodejs",
+  "main": "app.js",
+  "scripts": {
+    "start": "nodemon app.js"
+  },
+  "keywords": [
+    "software",
+    "nodejs",
+    "blog"
+  ],
+  "author": "The Great B",
+  "license": "ISC",
+  "dependencies": {
+    "ejs": "^3.1.8",
+    "express": "^4.18.2",
+    "mongoose": "^6.8.2"
+  },
+  "devDependencies": {
+    "nodemon": "^2.0.20"
+  }
+}
