@@ -27,3 +27,9 @@ exports.getSinglePage = (req, res) => {
         page_name: 'single',
     });
 };
+
+exports.getElementPage = (req, res) => {
+    res.status(200).render('elements',{
+        page_name: 'elements'
+    });
+};
