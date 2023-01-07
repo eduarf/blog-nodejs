@@ -1,8 +1,8 @@
 const Entry = require('../models/Entry');
 
 exports.createEntry = async(req, res) => {
-    const entry = await Entry.create(req.body);
     try {
+        const entry = await Entry.create(req.body);
         res.status(201).json({
             status: 'success',
             entry

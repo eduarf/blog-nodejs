@@ -1,5 +1,5 @@
 const express = require('express');
-const mongoose = require('mongoose');
+require('./db/db_connection');
 const pageRoute = require('./routes/pageRoute');
 const entryRoute = require('./routes/entryRoute');
 
@@ -7,8 +7,6 @@ const entryRoute = require('./routes/entryRoute');
 const app = express();
 
 app.set('view engine', 'ejs');
-mongoose.set('strictQuery', true);
-mongoose.connect('mongodb://127.0.0.1:27017/own-blog').then(() => console.log('db connected successfully'));
 
 // MIDDLEWARES
 app.use(express.static('public'));

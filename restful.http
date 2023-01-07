@@ -1,0 +1,11 @@
+GET http://localhost:3000/
+
+// 2 isteği birbirinden ayırmak için ### kullanılır
+###
+POST http://localhost:3000/entry
+Content-Type: application/json
+
+{
+    "header": "deneme header 2",
+    "description": "restful 3 description"
+}

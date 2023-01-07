@@ -12,11 +12,7 @@ const entrySchema = new Schema({
         required: true,
         trim: true,
     },
-    createdAt: {
-        type: Date,
-        default: Date.now,
-    },
-});
+}, {timestamps: true});
 
 //Schema'yı modele çevirmek
 const Entry = mongoose.model('Entry', entrySchema);
