@@ -1,9 +1,10 @@
 const express = require('express');
-const app = express();
 const mongoose = require('mongoose');
 const pageRoute = require('./routes/pageRoute');
 const entryRoute = require('./routes/entryRoute');
 
+
+const app = express();
 
 app.set('view engine', 'ejs');
 mongoose.set('strictQuery', true);

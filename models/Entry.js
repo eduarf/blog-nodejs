@@ -18,5 +18,6 @@ const entrySchema = new Schema({
     },
 });
 
+//Schema'yı modele çevirmek
 const Entry = mongoose.model('Entry', entrySchema);
 module.exports = Entry;

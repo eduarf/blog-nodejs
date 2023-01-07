@@ -9,6 +9,7 @@ exports.createEntry = async(req, res) => {
         });
     }
     catch(error){
+        // 400 --> bad request
         res.status(400).json({
             status: 'fail',
             error
