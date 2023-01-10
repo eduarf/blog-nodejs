@@ -18,7 +18,7 @@
           <span>&bullet;</span>
         </div>
         <h2><a href="#"> <%= entry.header %> </a></h2>
-        <p><%= entry.description %></p>
+        <p><%= [...entry.description].length > 100 ?  entry.description.substring(0, 100) + '...'  : entry.description %></p>
         
       </div>
     </div>
