@@ -20,16 +20,10 @@ exports.createEntry = async(req, res) => {
 exports.getAllEntries = async(req, res) => {
     try {
         const entries = await Entry.find();
-        res.status(200).json({
-            status: 'success',
-            entries
-        });
-        /*
         res.status(200).render('entries', {
             page_name: 'entries',
             entries
         });
-        */
     }
     catch(error){
         res.status(400).json({

@@ -1,0 +1,30 @@
+<%- include('partials/_header') -%>
+
+<div class="col-12">
+    <h2 class="section-title">All Entries</h2>
+  </div>
+
+
+  <% for(entry of entries) { %>
+
+<div class="col-12">
+    <div class="post-entry horizontal d-md-flex">
+      <div class="media">
+        <a href="#"><img src="../images/img_h_3.jpg" alt="Image" class="img-fluid"></a>
+      </div>
+      <div class="text">
+        <div class="meta">
+          <span> <%=  new Intl.DateTimeFormat('tr-TR', { year: 'numeric', month: 'long', day: '2-digit'}).format(entry.createdAt) %> </span>
+          <span>&bullet;</span>
+        </div>
+        <h2><a href="#"> <%= entry.header %> </a></h2>
+        <p><%= entry.description %></p>
+        
+      </div>
+    </div>
+  </div>
+
+<% } %>
+
+
+<%- include('partials/_footer') -%>
