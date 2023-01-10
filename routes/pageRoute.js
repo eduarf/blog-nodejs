@@ -10,5 +10,6 @@ router.route('/contact').get(pageController.getContactPage);
 router.route('/portfolio').get(pageController.getPortfolioPage);
 router.route('/single').get(pageController.getSinglePage);
 router.route('/elements').get(pageController.getElementPage);
+router.route('/createEntry').get(pageController.getCreateEntryPage);
 
 module.exports = router;

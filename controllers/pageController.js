@@ -33,3 +33,9 @@ exports.getElementPage = (req, res) => {
         page_name: 'elements'
     });
 };
+
+exports.getCreateEntryPage = (req, res) => {
+    res.status(200).render('createEntry', {
+        page_name: 'createEntry'
+    });
+};
