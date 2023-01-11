@@ -6,7 +6,6 @@
 
 
   <% for(entry of entries) { %>
-
 <div class="col-12">
     <div class="post-entry horizontal d-md-flex">
       <div class="media">
@@ -17,13 +16,12 @@
           <span> <%=  new Intl.DateTimeFormat('tr-TR', { year: 'numeric', month: 'long', day: '2-digit'}).format(entry.createdAt) %> </span>
           <span>&bullet;</span>
         </div>
-        <h2><a href="#"> <%= entry.header %> </a></h2>
+        <h2><a href="entry/<%= entry.slug %>"> <%= entry.header %> </a></h2>
         <p><%= [...entry.description].length > 100 ?  entry.description.substring(0, 100) + '...'  : entry.description %></p>
         
       </div>
     </div>
   </div>
-
 <% } %>
 
 

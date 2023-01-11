@@ -30,3 +30,19 @@ exports.getAllEntries = async(req, res) => {
         });
     }
 };
+
+exports.getEntry = async(req,res) => {
+    try {
+        const entry = await Entry.findOne({slug: req.params.slug});
+        res.status(200).render('entry',{
+            page_name: 'entry',
+            entry
+        });
+    }
+    catch(error){
+        res.status(400).json({
+            status: 'fail',
+            error,
+        });
+    }
+};

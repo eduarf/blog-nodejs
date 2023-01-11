@@ -1,4 +1,5 @@
 const mongoose = require('mongoose');
+const slugify = require('slugify')
 const Schema = mongoose.Schema;
 
 const entrySchema = new Schema({
@@ -12,7 +13,20 @@ const entrySchema = new Schema({
         required: true,
         trim: true,
     },
+    slug: {
+        type: String,
+        unique: true,
+    },
 }, {timestamps: true});
+
+entrySchema.pre('validate', function(next){
+    this.slug = slugify(this.header,{
+        lower: true,
+        strict: true,
+    });
+    next();
+});
+
 
 //Schema'yı modele çevirmek
 const Entry = mongoose.model('Entry', entrySchema);
