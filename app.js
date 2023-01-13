@@ -2,6 +2,7 @@ const express = require('express');
 require('./db/db_connection');
 const pageRoute = require('./routes/pageRoute');
 const entryRoute = require('./routes/entryRoute');
+const userRoute = require('./routes/userRoute');
 
 
 const app = express();
@@ -16,6 +17,7 @@ app.use(express.urlencoded({extended: true}));
 
 app.use('/', pageRoute);
 app.use('/entry', entryRoute);
+app.use('/users', userRoute);
 
 
 const port = 3000;
