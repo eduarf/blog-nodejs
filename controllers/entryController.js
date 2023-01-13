@@ -2,7 +2,6 @@ const Entry = require('../models/Entry');
 
 exports.createEntry = async(req, res) => {
     try {
-        console.log(req.body);
         const entry = await Entry.create(req.body);
         res.status(201).redirect('/entry');
     }

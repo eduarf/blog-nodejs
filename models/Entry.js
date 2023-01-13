@@ -19,7 +19,7 @@ const entrySchema = new Schema({
     },
 }, {timestamps: true});
 
-entrySchema.pre('validate', function(next){
+entrySchema.pre('save', function(next){
     this.slug = slugify(this.header,{
         lower: true,
         strict: true,
