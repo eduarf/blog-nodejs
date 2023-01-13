@@ -12,5 +12,6 @@ router.route('/single').get(pageController.getSinglePage);
 router.route('/elements').get(pageController.getElementPage);
 router.route('/createEntry').get(pageController.getCreateEntryPage);
 router.route('/register').get(pageController.getRegisterPage);
+router.route('/login').get(pageController.getLoginPage);
 
 module.exports = router;
