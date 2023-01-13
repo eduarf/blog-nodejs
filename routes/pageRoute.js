@@ -11,5 +11,6 @@ router.route('/portfolio').get(pageController.getPortfolioPage);
 router.route('/single').get(pageController.getSinglePage);
 router.route('/elements').get(pageController.getElementPage);
 router.route('/createEntry').get(pageController.getCreateEntryPage);
+router.route('/register').get(pageController.getRegisterPage);
 
 module.exports = router;
