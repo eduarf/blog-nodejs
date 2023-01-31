@@ -1,5 +1,7 @@
 <%- include('partials/_header') -%>
 
+<% if(user) { %>
+
 <div class="col-12">
     <h2 class="section-title"> <%= user.name %>'s entries  </h2>
   </div>
@@ -24,5 +26,5 @@
   </div>
 <% } %>
 
-
+<% } %>
 <%- include('partials/_footer') -%>
