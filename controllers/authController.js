@@ -4,10 +4,7 @@ const bcrypt = require('bcrypt');
 exports.createUser = async(req, res) => {
     try {
         const user = await User.create(req.body);
-        res.status(201).json({
-            status: 'success',
-            user,
-        });
+        res.status(201).redirect('/login');
     }
     catch(error){
         res.status(400).json({
@@ -23,7 +20,8 @@ exports.loginUser = async(req, res) => {
         let user = await User.findOne({email});
         let same = await bcrypt.compare(password, user.password);
         if(same){
-            res.status(200).send('you are logged in');
+            req.session.userID = user._id;
+            res.status(200).redirect('/');
         }
         else {
             res.send('you are not logged in');

@@ -67,14 +67,14 @@
           <div class="col-9 col-md-6 col-lg-3 text-right top-menu">
 
             <div class="d-inline-flex align-items-center">
-              <div class="search-wrap">
+              <!-- <div class="search-wrap">
               <a href="#" class="d-inline-flex align-items-center js-search-toggle mr-2"><span class="icon-search2 mr-2"></span><span>Search</span></a>
 
               <form action="#" class="d-flex">
                 <input type="search" id="s" class="form-control" placeholder="Enter keyword and hit enter...">                  
               </form>
 
-              </div>
+              </div> -->
 
               <span class="mx-2 d-inline-block d-lg-none"></span>
               
@@ -86,12 +86,16 @@
               <a href="#" class="burger ml-3 site-menu-toggle js-menu-toggle d-inline-block d-lg-none" data-toggle="collapse" data-target="#main-navbar">
                 <span></span>
               </a>
-
+              <% if(!userIN){ %>
               <a href="/register" class=" <%= page_name === 'register' ? 'bg-success text-light' : '' %> btn btn-light mr-3">Register</a>
               <a href="/login" class=" <%= page_name === 'login' ? 'bg-success text-light' : '' %> btn btn-dark">Login</a>
             </div>
+            <% } %>
             
-            
+            <% if(userIN){ %>
+              <a href="/login" class=" <%= page_name === 'login' ? 'bg-success text-light' : '' %> btn btn-danger">Log out</a>
+            </div>
+            <% } %>
 
           </div>
         </div>
@@ -101,7 +105,9 @@
           <div class="col-12 col-sm-12 col-lg-12 site-navigation text-center">
             <ul class="js-clone-nav d-none d-lg-inline-block text-left site-menu">
               <li class="<%= page_name === 'index' ? 'active' : '' %>"><a href="/">Home</a></li>
+              <% if(userIN){ %>
               <li><a href="/createEntry">Create</a></li>
+              <% } %>
               <li><a href="/elements">Elements</a></li>
               
               <li class="<%= page_name === 'contact' ? 'active' : '' %>"><a href="/contact">Contact us</a></li>
