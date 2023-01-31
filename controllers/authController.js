@@ -21,7 +21,7 @@ exports.loginUser = async(req, res) => {
         let same = await bcrypt.compare(password, user.password);
         if(same){
             req.session.userID = user._id;
-            res.status(200).redirect('/');
+            res.status(200).redirect('/entry');
         }
         else {
             res.send('you are not logged in');

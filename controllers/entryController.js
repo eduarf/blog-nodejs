@@ -1,3 +1,4 @@
+const User = require('../models/User');
 const Entry = require('../models/Entry');
 
 exports.createEntry = async(req, res) => {
@@ -17,9 +18,11 @@ exports.createEntry = async(req, res) => {
 exports.getAllEntries = async(req, res) => {
     try {
         const entries = await Entry.find();
+        const user = await User.findOne({_id: req.session.userID});
         res.status(200).render('entries', {
             page_name: 'entries',
-            entries
+            entries,
+            user
         });
     }
     catch(error){
