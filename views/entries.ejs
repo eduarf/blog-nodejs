@@ -18,7 +18,7 @@
           <span> <%=  new Intl.DateTimeFormat('tr-TR', { year: 'numeric', month: 'long', day: '2-digit'}).format(entry.createdAt) %> </span>
           <span>&bullet;</span>
         </div>
-        <h2><a href="entry/<%= entry.slug %>"> <%= entry.header %> </a></h2>
+        <h2><a href="/entry/<%= entry.slug %>"> <%= entry.header %> </a></h2>
         <p><%= [...entry.description].length > 100 ?  entry.description.substring(0, 100) + '...'  : entry.description %></p>
         
       </div>

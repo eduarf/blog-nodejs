@@ -3,7 +3,12 @@ const Entry = require('../models/Entry');
 
 exports.createEntry = async(req, res) => {
     try {
-        const entry = await Entry.create(req.body);
+        const savingObj = {
+            header: req.body.header,
+            description: req.body.description,
+            userID: req.session.userID
+        };
+        const entry = await Entry.create(savingObj);
         res.status(201).redirect('/entry');
     }
     catch(error){

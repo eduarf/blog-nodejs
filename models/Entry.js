@@ -13,6 +13,9 @@ const entrySchema = new Schema({
         required: true,
         trim: true,
     },
+    userID: {
+        type: String,
+    },
     slug: {
         type: String,
         unique: true,
