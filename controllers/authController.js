@@ -1,6 +1,7 @@
 const User = require('../models/User');
 const bcrypt = require('bcrypt');
 
+
 exports.createUser = async(req, res) => {
     try {
         const user = await User.create(req.body);

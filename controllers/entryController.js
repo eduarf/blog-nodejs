@@ -22,7 +22,8 @@ exports.createEntry = async(req, res) => {
 
 exports.getAllEntries = async(req, res) => {
     try {
-        const entries = await Entry.find();
+        // const entries = await Entry.find();
+        const entries = await Entry.find({userID: req.session.userID});
         const user = await User.findOne({_id: req.session.userID});
         res.status(200).render('entries', {
             page_name: 'entries',
