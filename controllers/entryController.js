@@ -54,3 +54,16 @@ exports.getEntry = async(req,res) => {
         });
     }
 };
+
+exports.deleteEntry = async(req, res) => {
+    console.log('geldi buraya');
+    try {
+        
+    }
+    catch(error) {
+        res.status(400).json({
+            status: 'fail',
+            error,
+        });
+    }
+}
